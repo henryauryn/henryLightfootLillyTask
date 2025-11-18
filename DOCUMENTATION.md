@@ -5,6 +5,7 @@
 ***Not every section in this document is required. This is just a template to help get you started. Feel free to add or remove sections as you feel necessary.***
 
 ## Approach
+Repo initialization
 *How did you approach this challenge? Did you work through the objectives in any particular order? If so, why? Did you utilize any external resources, such as tutorials, guides, or other materials?*
 
 ## Objectives - Innovative Solutions
