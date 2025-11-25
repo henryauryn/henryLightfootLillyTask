@@ -14,7 +14,7 @@ async function getMedicines() {
         const listItem = document.createElement('li');
 
         const validName = med.name ? med.name : '<strong style="color: red;">Name not provided</strong>';
-        const priceText = med.price ? `£${med.price}` : '<strong style="color: red;">Price not provided</strong>';
+        const priceText = med.price ? `<strong>£${med.price}</strong>` : '<strong style="color: red;">Price not provided</strong>';
         listItem.innerHTML = `${validName}: ${priceText}`;
 
         list.appendChild(listItem);
@@ -25,3 +25,33 @@ async function getMedicines() {
 }
 
 getMedicines();
+
+const addMedForm = document.getElementById('add-medicine-form');
+
+addMedForm.addEventListener('submit', async function(event) {
+
+    event.preventDefault();
+
+    const formData = new FormData(addMedForm);
+
+    try {
+        const response = await fetch('http://localhost:8000/create', {
+            method: 'POST',
+            body: formData 
+        });
+
+        if (response.ok) {
+            console.log("Medicine added!");
+
+            addMedForm.reset();
+
+            document.getElementById('medicine-list').innerHTML = '';
+            document.getElementById('conf').innerHTML = '<strong style="color: red;">Medicine added successfully!</strong>';
+            getMedicines(); 
+        } else {
+            console.error("Failed to add medicine");
+        }
+    } catch (error) {
+        console.error("Error:", error);
+    }
+});

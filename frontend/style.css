@@ -30,3 +30,12 @@ body {
 }
 
 /* ---- Your custom styles below ---- */
+
+.container {
+    margin-left: auto;
+    margin-right: auto;
+    background-color: white;
+    width: 400px;
+    border-radius: 20px;
+    padding: 40px;
+}
