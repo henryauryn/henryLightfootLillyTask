@@ -1,4 +1,4 @@
-from fastapi import FastAPI, Form
+from fastapi import FastAPI, Form, Query
 from fastapi.middleware.cors import CORSMiddleware
 """
 This module defines a FastAPI application for managing a list of medicines.
@@ -104,7 +104,7 @@ def update_med(name: str = Form(...), price: float = Form(...)):
     return {"error": "Medicine not found"}
 
 @app.delete("/delete")
-def delete_med(name: str = Form(...)):
+def delete_med(name: str = Query(...)):
     """
     This function deletes a medicine with the specified name.
     It expects the name to be provided as form data.

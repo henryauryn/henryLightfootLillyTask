@@ -39,3 +39,15 @@ body {
     border-radius: 20px;
     padding: 40px;
 }
+
+.medicationItem {
+    border: 1px solid gray;
+    border-radius: 5px;
+    padding-left: 5px;
+
+}
+
+#medicationList {
+    display: grid;
+    gap: 0.5rem;
+}
